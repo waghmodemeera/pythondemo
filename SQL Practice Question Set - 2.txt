@@ -1,0 +1,73 @@
+SQL tuff to practice set 2
+
+1.Display the names of the employee in order of salary i.e. the name of employee earning lowest salary should be first.
+
+	SELECT ENAME ,ESAL FROM EMP  ORDER BY ESAL ;
+
+2.Display the empno,ename,deptno,salary sort the output first based on name within name by deptno and within deptno by salary.
+	
+	select EID, ENAME, ECITY, ESAL from EMP order by ENAME, ECITY , esal;
+
+3.Display the name of the employee along with their annual salary (salary*12). The name of the employee earning highest annual salary should appear first.
+
+	select ename , esal = (esal *12)  from emp order by esal desc;
+
+4.Display the names,salary,HRA,PF,DA,Total Salary for each employeer.
+  The output should be in the order of total salary,HRA 15% salary,DA 10% salary, PF 5% of salary, total salary will be (salary+HRA+DA)-PF
+
+	select names,salary,HRA = salary *0.15 ,PF= salary *0.05,DA=slaary *0.10,Total Salary = (salary +HRA+D)-PF from emp 
+
+5.Display the department numbers and total number of employees working in each department.
+
+ 	SELECT EID, COUNT(*) FROM EMP GROUP BY EID 
+
+6.Display the department numbers and total salary for each department
+	
+	SELECT EID,  sum(ESAL) as newsal FROM EMP GROUP BY eid ;
+	
+7.Display the department numbers and total maximum salary for each department
+
+	select eid, max(esal) from emp group by eid;
+
+8.Display the department numbers and total salary for each department whose employee count is more than 2.
+	
+	select eid, count(*) from emp group by eid having count(*)>2	
+
+9.Display the names of HR whos earn a salary more than highest salary of Finance department.
+
+	select ename from emp where ecity='akola' and  Esal > (select max(esal) from emp where ecity='US');
+
+10.Display the name of employess who earn highest salary in their respective department?
+
+	select ename,edept, max(esal) from emp group by ename order by dept
+
+
+11.Display the name of employess who are working in Accounting department.
+
+	select ename from EMP where dept = 'accounting';
+
+12.Display the name of employess who are working in Mumbai.
+	select ename from EMP where ecity = 'mumbai';
+
+
+13.Display the department having total salary greater than the maximum salary for managers.
+
+	select ecity from emp group by ecity having sum(esal)  > (select max(esal) from emp where ecity = 'us')
+
+
+14.Display the employess last or bottom 5 records.
+
+
+15.Display the employess whose employee ID is even.
+ 
+	select * from emp where eid % 2 =0
+
+16.Display the employess whose employee ID is odd.
+17.How to find '_' within two names (for ex: name like Praveen_Patil)
+18.Display the maximum salary from being paid to Finance department from employee table.
+
+	SELECT DEPT_ID, MAX(SALARY) FROM department GROUP BY DEPT_ID having deptname = 'finance';
+
+
+19.Display the minimum salary from being paid to HR department from from employee table.
+20.Display the Average salary drwan by Manager department from from employee table.
