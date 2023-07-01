@@ -1,0 +1,45 @@
+
+create table
+Results
+(Student_no int,
+Sname varchar(25),
+Srollno int primary key,
+Physics_marks int,
+Chemistry_marks int,
+Maths_marks int,
+Biology_marks int,
+total_marks int,
+Total_Percentage float(4),
+Sresult varchar(5),
+Scity Char(15))
+------------------------------------------
+
+Insert Into Results Values (001, 'chinmay', 111, 99, 88, 88, 89, Null, Null,Null, 'Pune');
+Insert Into Results Values (002, 'shobha', 112, 83, 88, 88, 80, Null, Null,Null, 'Mumbai');
+Insert Into Results Values (003, 'aparna', 113, 85, 88, 88, 55, Null, Null,Null, 'Pune');
+Insert Into Results Values (004, 'mohit', 114, 81, 88, 88, 32, Null, Null,Null, 'Pune');
+Insert Into Results Values (005, 'kashish', 115, 85, 88, 88, 80, Null, Null,Null, 'Pune');
+Insert Into Results Values (006, 'jhon', 116, 88, 40, 88, 85, Null, Null,Null, 'Pune');
+Insert Into Results Values (007, 'danial', 117, 55, 88, 88, 80, Null, Null,Null, 'Pune');
+Insert Into Results Values (008, 'chetan', 118, 52, 88, 88, 82, Null, Null,Null, 'Pune');
+Insert Into Results Values (009, 'swapnil', 119, 56, 88, 88, 59, Null, Null,Null, 'Pune');
+Insert Into Results Values (010, 'roman', 120, 56, 88, 88, 89, Null, Null,Null, 'Pune');
+Insert Into Results Values (011, 'harry', 121, 55, 88, 88, 89, Null, Null,Null, 'Pune');
+Insert Into Results Values (012, 'ronald', 122, 77, 88, 88, 89, Null, Null,Null, 'Pune');
+Insert Into Results Values (013, 'yusuf', 123, 66, 88, 88, 80, Null, Null,Null, 'Mumbai');
+Insert Into Results Values (014, 'reema', 124, 56, 88, 88, 82, Null, Null,Null, 'Pune');
+Insert Into Results Values (015, 'abhishek', 125, 80, 88, 88, 86, Null, Null,Null, 'Satara');
+Insert Into Results Values (016, 'seema', 126, 88, 88, 88, 90, Null, Null,Null, 'Satara');
+Insert Into Results Values (017, 'sonali', 127, 83, 88, 88, 89, Null, Null,Null, 'Kolhapur');
+Insert Into Results Values (018, 'amrut', 128, 86, 88, 88, 80, Null, Null,Null, 'Pune');
+Insert Into Results Values (019, 'roopali', 129, 33, 88, 88, 49, Null, Null,Null, 'Pune');
+Insert Into Results Values (020, 'manali', 130, 22, 88, 88, 69, Null, Null,Null, 'Pune');
+Insert Into Results Values (021, 'aishwarya', 131, 22, 88, 88, 79, Null, Null,Null, 'Pune');
+Insert Into Results Values (022, 'surekha', 132, 83, 88, 88, 99, Null, Null,Null, 'Hyderabad');
+Insert Into Results Values (023, 'gaurav', 133, 86, 88, 88, 69, Null, Null,Null, 'Hyderabad');
+Insert Into Results Values (024, 'kunal', 134, 89, 88, 88, 39, Null, Null,Null, 'Manali');
+Insert Into Results Values (025, 'virat', 135, Null, 88, 88, 19, Null, Null,Null, 'Manali');
+------------------------------------------
+select * from Results
+------------------------------------------
+
