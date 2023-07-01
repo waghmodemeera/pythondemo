@@ -1,0 +1,33 @@
+------------------------ETL_Package creation project------------------------
+--->step 1 - Identification of tables in the ETL code
+
+select * from information_schema.tables
+------------------------------------------------
+--->Step 2 - check for data
+select * from dbo.Customer
+select * from dbo.Customer1
+select * from dbo.Customer2
+------------------------------------------------
+--->Step 3 - Check for count
+
+---Source---
+select count(*) from dbo.Customer -----
+---Target---
+select count(*) from dbo.Customer1-----
+select count(*) from dbo.Customer2-----
+------------------------------------------------
+-->Step 4 - Execute ETL code
+------------------------------------------------
+-->Step 5 - Check for the transformations
+
+---Source---
+select count(*) from dbo.Customer -----73936
+---Target---
+select count(*) from dbo.Customer1-----37404
+select count(*) from dbo.Customer2-----36532
+-------------------------------------------------
+-->Step 6 - Check for data correctness
+select * from dbo.Customer
+select * from dbo.Customer1
+select * from dbo.Customer2
+-------------------------------------------------
