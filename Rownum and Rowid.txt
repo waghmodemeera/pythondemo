@@ -1,0 +1,63 @@
+select * from results
+--------------------------------Rownum---------------------------------------
+--It will generate a temporary sequence number.
+
+--To see the basic sequence-
+select rownum from results; 
+-----------------------------------------------------------------------------
+--To see top 5 records from table-
+select results .*,rownum from results
+where rownum<=5;
+-----------------------------------------------------------------------------
+--To see Last 5 records from table-
+Select * from (Select results.*,rownum from results order by rownum desc)
+where rownum<=5;
+-----------------------------------------------------------------------------
+
+ ----------------------Rowid-------------------------------------------------
+---It is Unique id for each row from a table.
+--To see the basic id -
+
+Select rowid from results;
+-----------------------------------------------------------------------------
+--To show all details + rowid-
+Select results.*, Rowid From results; 
+-----------------------------------------------------------------------------
+--Rowid is unique for every record.
+--It can be anything, a sequence of alphanymeric values, characters, etc. given by database engine e.g-(fsdhgnbsd5865hAAA)
+--Rowid will get disturbed if you delete some records.
+-----------------------------------------------------------------------------
+•	Important Question- How to find out duplicate records?
+
+We can solve this by 2 methods- 
+1. Having clause.   
+2. Rowid
+-----------------------------------------------------------------------------
+If used the having clause, the entire details of the record will not get displayed.
+So it will be difficult to identify the original and duplicate records. So we often use rowid method.
+
+-----------------------------------------------------------------------------
+•	Important Question- How to delete duplicate records?
+Delete from results where rowid not in
+(select max(rowid) from results group by sname);
+-----------------------------------------------------------------------------
+             Max-Recent records will be considered as unique and remaining will be removed.
+             Min- Old records will be considered as unique and remaining will be removed.
+-----------------------------------------------------------------------------
+•	Important Question- How to display duplicate records?
+
+Select emp_info.*, rowid from results where rowid not in
+(select max(rowid) from results group by sname);
+-----------------------------------------------------------------------------
+
+•	Important Question- How to display Unique records?
+There are 2 methods to display unique records.
+
+1.	Distinct-
+Select distinct(sname) from results;
+
+2.	Rowid method-
+
+Select results.*, rowid from sname where rowid  in
+(select max(rowid) from sname group by sname);
+---------------------------------------------------------------------------------------------------
